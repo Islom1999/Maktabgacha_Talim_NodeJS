@@ -66,115 +66,117 @@
                         <h3 class="card-title">Guruhlar Ro'yhati</h3>
                         <p>Bu sahifada guruhlar ro'yhatini ko'rishiz mumkin</p>
                         <!-- Bordered Table -->
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Guruh nomi</th>
-                                    <th scope="col">Guruh haqida ma'lumot</th>
-                                    <th scope="col">Tarbiyachilar</th>
-                                    <th scope="col">O'zgartirish</th>
-                                    <th scope="col">O'chirish</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{#each groups}}
-                                <tr>
-                                    <th scope="row">{{@index}}</th>
-                                    <td>{{title}}</td>
-                                    <td>{{descr}}</td>
-                                    <td>
-                                        {{#if teacher}}
-                                        <ol>
-                                            {{#each teacher}}
-                                            <li>{{fullname}}</li>
-                                            {{/each}}
-                                        </ol>
-                                        {{else}}
-                                        -
-                                        {{/if}}
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#update-{{@index}}">
-                                            <i class="ri-edit-box-fill"></i>
-                                        </button>
-                                        <div class="modal fade" id="update-{{@index}}" tabindex="-1">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Guruhni malumotlarini o'zgartirish</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <form action="/group/update/{{_id}}" method="POST">
-                                                        <div class="modal-body">
-                                                            <div class="mb-3">
-                                                                <label class="form-label" for="">Guruh nomi</label>
-                                                                <input class="form-control" type="text" name="title"
-                                                                    required value="{{title}}">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label class="form-label" for="">Guruh haqida
-                                                                    malumot</label>
-                                                                <textarea class="form-control" name="descr"
-                                                                    required>{{descr}}</textarea>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label class="form-label" for="">Tarbiyachi</label>
-                                                                <select class="form-select" name="teacher">
-                                                                    {{#each ../ workers}}
-                                                                    <option value="{{_id}}">{{fullname}}</option>
-                                                                    {{/each}}
-                                                                </select>
-                                                            </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Guruh nomi</th>
+                                        <th scope="col">Guruh haqida ma'lumot</th>
+                                        <th scope="col">Tarbiyachilar</th>
+                                        <th scope="col">O'zgartirish</th>
+                                        <th scope="col">O'chirish</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each groups}}
+                                    <tr>
+                                        <th scope="row">{{@index}}</th>
+                                        <td>{{title}}</td>
+                                        <td>{{descr}}</td>
+                                        <td>
+                                            {{#if teacher}}
+                                            <ol>
+                                                {{#each teacher}}
+                                                <li>{{fullname}}</li>
+                                                {{/each}}
+                                            </ol>
+                                            {{else}}
+                                            -
+                                            {{/if}}
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#update-{{@index}}">
+                                                <i class="ri-edit-box-fill"></i>
+                                            </button>
+                                            <div class="modal fade" id="update-{{@index}}" tabindex="-1">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Guruhni malumotlarini o'zgartirish</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                        <form action="/group/update/{{_id}}" method="POST">
+                                                            <div class="modal-body">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="">Guruh nomi</label>
+                                                                    <input class="form-control" type="text" name="title"
+                                                                        required value="{{title}}">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="">Guruh haqida
+                                                                        malumot</label>
+                                                                    <textarea class="form-control" name="descr"
+                                                                        required>{{descr}}</textarea>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="">Tarbiyachi</label>
+                                                                    <select class="form-select" name="teacher">
+                                                                        {{#each ../ workers}}
+                                                                        <option value="{{_id}}">{{fullname}}</option>
+                                                                        {{/each}}
+                                                                    </select>
+                                                                </div>
 
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Qaytish</button>
-                                                            <button type="submit"
-                                                                class="btn btn-primary">Qo'shish</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div><!-- End Basic Modal-->
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#delete-{{@index}}">
-                                            <i class="ri-delete-bin-fill"></i>
-                                        </button>
-                                        <div class="modal fade" id="delete-{{@index}}" tabindex="-1">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Bolani malumotlarini o'chirish</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Qaytish</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Qo'shish</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
-                                                    <form action="/group/delete/{{_id}}" method="POST">
-                                                        <div class="modal-body">
-                                                            <h4>Haqiqatdan ham O'chirmoqchimisiz</h4>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Qaytish</button>
-                                                            <button type="submit"
-                                                                class="btn btn-danger">O'chirish</button>
-                                                        </div>
-                                                    </form>
                                                 </div>
-                                            </div>
-                                        </div><!-- End Basic Modal-->
-                                    </td>
-                                    <!-- Basic Modal -->
+                                            </div><!-- End Basic Modal-->
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                                data-bs-target="#delete-{{@index}}">
+                                                <i class="ri-delete-bin-fill"></i>
+                                            </button>
+                                            <div class="modal fade" id="delete-{{@index}}" tabindex="-1">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Bolani malumotlarini o'chirish</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                        <form action="/group/delete/{{_id}}" method="POST">
+                                                            <div class="modal-body">
+                                                                <h4>Haqiqatdan ham O'chirmoqchimisiz</h4>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Qaytish</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-danger">O'chirish</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- End Basic Modal-->
+                                        </td>
+                                        <!-- Basic Modal -->
 
-                                </tr>
-                                {{/each}}
-                            </tbody>
-                        </table>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
                         <!-- End Bordered Table -->
                     </div>
                 </div>

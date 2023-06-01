@@ -112,40 +112,42 @@
                         <h3 class="card-title">Xodimlar Ro'yhati</h3>
                         <p>Bu sahifada xodimlar ro'yhatini ko'rishiz mumkin</p>
                         <!-- Bordered Table -->
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Ism Familiyasi</th>
-                                    <th scope="col">Lavozimi</th>
-                                    <th scope="col">Tugilgan sanasi</th>
-                                    <th scope="col">Ish boshlagan sanasi</th>
-                                    <th scope="col">Oyligi</th>
-                                    <th scope="col">Guruhlari</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{#each workers}}
-                                <tr>
-                                    <th scope="row">{{@index}}</th>
-                                    <td>{{fullname}}</td>
-                                    <td>{{status}}</td>
-                                    <td>{{birth}}</td>
-                                    <td>{{date}}</td>
-                                    <td>{{amount}}</td>
-                                    <td>
-                                        {{#if groups}}
-                                        {{groups.title}}
-                                        {{else}}
-                                        -
-                                        {{/if}}
-                                    </td>
-                                    <!-- Basic Modal -->
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Ism Familiyasi</th>
+                                        <th scope="col">Lavozimi</th>
+                                        <th scope="col">Tugilgan sanasi</th>
+                                        <th scope="col">Ish boshlagan sanasi</th>
+                                        <th scope="col">Oyligi</th>
+                                        <th scope="col">Guruhlari</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each workers}}
+                                    <tr>
+                                        <th scope="row">{{@index}}</th>
+                                        <td>{{fullname}}</td>
+                                        <td>{{status}}</td>
+                                        <td>{{birth}}</td>
+                                        <td>{{date}}</td>
+                                        <td>{{amount}}</td>
+                                        <td>
+                                            {{#if groups}}
+                                            {{groups.title}}
+                                            {{else}}
+                                            -
+                                            {{/if}}
+                                        </td>
+                                        <!-- Basic Modal -->
 
-                                </tr>
-                                {{/each}}
-                            </tbody>
-                        </table>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
                         <!-- End Bordered Table -->
                     </div>
                 </div>
@@ -157,37 +159,39 @@
                         <h3 class="card-title">Bolalar Ro'yhati</h3>
                         <p>Bu sahifada xodimlar ro'yhatini ko'rishiz mumkin</p>
                         <!-- Bordered Table -->
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Ism Familiyasi</th>
-                                    <th scope="col">Tugilgan sanasi</th>
-                                    <th scope="col">Kelgan sanasi</th>
-                                    <th scope="col">Oylik to'lovi</th>
-                                    <th scope="col">Guruhlari</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{#each children}}
-                                <tr>
-                                    <th scope="row">{{@index}}</th>
-                                    <td>{{fullname}}</td>
-                                    <td>{{birth}}</td>
-                                    <td>{{date}}</td>
-                                    <td>{{amount}}</td>
-                                    <td>
-                                        {{#if groups}}
-                                        {{groups.title}}
-                                        {{else}}
-                                        -
-                                        {{/if}}
-                                    </td>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Ism Familiyasi</th>
+                                        <th scope="col">Tugilgan sanasi</th>
+                                        <th scope="col">Kelgan sanasi</th>
+                                        <th scope="col">Oylik to'lovi</th>
+                                        <th scope="col">Guruhlari</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each children}}
+                                    <tr>
+                                        <th scope="row">{{@index}}</th>
+                                        <td>{{fullname}}</td>
+                                        <td>{{birth}}</td>
+                                        <td>{{date}}</td>
+                                        <td>{{amount}}</td>
+                                        <td>
+                                            {{#if groups}}
+                                            {{groups.title}}
+                                            {{else}}
+                                            -
+                                            {{/if}}
+                                        </td>
 
-                                </tr>
-                                {{/each}}
-                            </tbody>
-                        </table>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
                         <!-- End Bordered Table -->
                     </div>
                 </div>
