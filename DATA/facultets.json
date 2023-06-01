@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "646fbb725a9735d2409f49df"
+  },
+  "title": "Komputer injeneringi",
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685051958494"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "646fda5b1b92b755aa088a61"
+  },
+  "title": "Telekomunikatsiya Texnologiyalari",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685051995452"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685051995452"
+    }
+  },
+  "__v": 0
+}]

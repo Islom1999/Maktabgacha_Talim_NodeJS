@@ -1,0 +1,199 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>{{title}}</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="row">
+
+                    <!-- Sales Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card sales-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Xodimlar <span>| Hozirda</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div
+                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="ps-6">
+                                        <h6>{{dashboard.workers}}</h6>
+                                        <span class="text-muted small pt-2 ps-1">Nafarni tashkil etadi</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!-- End Sales Card -->
+
+                    <!-- Revenue Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card revenue-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Bolalar <span>| Hozirda</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div
+                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>{{dashboard.children}}</h6>
+                                        <span class="text-muted small pt-2 ps-1">Nafarni tashkil etadi</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!-- End Revenue Card -->
+
+                    <!-- Customers Card -->
+                    <div class="col-xxl-3 col-xl-6">
+
+                        <div class="card info-card customers-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Kirimlar <span>| Shu oy</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div
+                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-currency-dollar"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>{{dashboard.childrenAmount}}</h6>
+                                        <span class="text-muted small pt-2 ps-1">summani tashkil etadi</span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div><!-- End Customers Card -->
+
+                    <!-- Customers Card -->
+                    <div class="col-xxl-3 col-xl-6">
+
+                        <div class="card info-card revenue-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Ish haqi <span>| Shu oy</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div
+                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-currency-dollar"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>{{dashboard.workersAmount}}</h6>
+                                        <span class="text-muted small pt-2 ps-1">summani tashkil etadi</span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div><!-- End Customers Card -->
+
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Xodimlar Ro'yhati</h3>
+                        <p>Bu sahifada xodimlar ro'yhatini ko'rishiz mumkin</p>
+                        <!-- Bordered Table -->
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ism Familiyasi</th>
+                                    <th scope="col">Lavozimi</th>
+                                    <th scope="col">Tugilgan sanasi</th>
+                                    <th scope="col">Ish boshlagan sanasi</th>
+                                    <th scope="col">Oyligi</th>
+                                    <th scope="col">Guruhlari</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each workers}}
+                                <tr>
+                                    <th scope="row">{{@index}}</th>
+                                    <td>{{fullname}}</td>
+                                    <td>{{status}}</td>
+                                    <td>{{birth}}</td>
+                                    <td>{{date}}</td>
+                                    <td>{{amount}}</td>
+                                    <td>
+                                        {{#if groups}}
+                                        {{groups.title}}
+                                        {{else}}
+                                        -
+                                        {{/if}}
+                                    </td>
+                                    <!-- Basic Modal -->
+
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <!-- End Bordered Table -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Bolalar Ro'yhati</h3>
+                        <p>Bu sahifada xodimlar ro'yhatini ko'rishiz mumkin</p>
+                        <!-- Bordered Table -->
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ism Familiyasi</th>
+                                    <th scope="col">Tugilgan sanasi</th>
+                                    <th scope="col">Kelgan sanasi</th>
+                                    <th scope="col">Oylik to'lovi</th>
+                                    <th scope="col">Guruhlari</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each children}}
+                                <tr>
+                                    <th scope="row">{{@index}}</th>
+                                    <td>{{fullname}}</td>
+                                    <td>{{birth}}</td>
+                                    <td>{{date}}</td>
+                                    <td>{{amount}}</td>
+                                    <td>
+                                        {{#if groups}}
+                                        {{groups.title}}
+                                        {{else}}
+                                        -
+                                        {{/if}}
+                                    </td>
+
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <!-- End Bordered Table -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main><!-- End #main -->

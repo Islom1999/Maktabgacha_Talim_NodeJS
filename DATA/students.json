@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "646fbc348515fb6a626397f9"
+  },
+  "fullname": "Karimov Islom",
+  "image": "/images/faces/face1.jpg",
+  "date": "2023-03-12",
+  "amountMonth": 3,
+  "cource": {
+    "$oid": "646fb8615a9735d2409f49c5"
+  },
+  "group": {
+    "$oid": "646fb99a5a9735d2409f49ca"
+  },
+  "facultet": {
+    "$oid": "646fbb9e5a9735d2409f49e0"
+  },
+  "room": {
+    "$oid": "646fb9e15a9735d2409f49d0"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685044276870"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685044276870"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "646fddee7450235706c5393c"
+  },
+  "fullname": "Bekmuratov Sardor",
+  "image": "/upload/img/image-1685052941244.png",
+  "date": "2023-03-12",
+  "amountMonth": "2",
+  "cource": {
+    "$oid": "646fb8615a9735d2409f49c5"
+  },
+  "group": {
+    "$oid": "646fb99a5a9735d2409f49ca"
+  },
+  "facultet": {
+    "$oid": "646fbb725a9735d2409f49df"
+  },
+  "room": {
+    "$oid": "646fb9fd5a9735d2409f49d1"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685052910488"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685052941281"
+    }
+  },
+  "__v": 0
+}]
