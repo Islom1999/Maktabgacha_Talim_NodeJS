@@ -7,6 +7,7 @@ const {
     getChildren,
     getSetting,
     getAdmin,
+    getOrderTableAdmin,
 } = require('../controls/pagesControls')
 
 const {
@@ -25,12 +26,19 @@ const {
     createAdmin,
     updateAdmin,
     deleteAdmin,
+
+    childrenCreateOrder,
+    deleteOrder
 } = require('../controls/crudControls')
 
 
 const router = Router()
 
-router.get('/', getDashboard)
+// router.get('/', getDashboard)
+
+router.get('/order/table', getOrderTableAdmin)
+router.post('/children/create/order/:id', childrenCreateOrder)
+router.post('/order/delete/:id', deleteOrder)
 
 router.get('/workers', getWorker)
 router.post('/worker/create', createWorker)

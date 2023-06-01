@@ -1,0 +1,99 @@
+<main id="main" class="main">
+
+    <div class="pagetitle text-center">
+      <h1>Ariza qoldirish</h1>
+        <p class="breadcrumb justify-content-center">
+            Ariza maktabgacha talimga joylashtirish uchun ariza qoldirish
+        </p>
+    </div><!-- End Page Title -->
+
+    <section class="section contact">
+
+      <div class="row gy-4">
+
+        <div class="col-xl-6">
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-geo-alt"></i>
+                <h3>Manzil</h3>
+                <p>Samarqand shahar</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-telephone"></i>
+                <h3>Bog'lanish</h3>
+                <p>+998 97 000 00 00</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-envelope"></i>
+                <h3>Email</h3>
+                <p>maktabgachatalin@example.com <br><br> </p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-clock"></i>
+                <h3>Ish vaqti</h3>
+                <p>Dushanba - Juma<br>9:00 - 17:00</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xl-6">
+          <div class="card p-4">
+            <form action="/child/order" method="post">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="fullname" placeholder="Tugulgan sanasini kiriting" required>
+                        <label for="">Ism familiyani kiriting</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 ">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" name="birth" placeholder="Tugulgan sanasini kiriting" required>
+                        <label for="">Tugulgan sanasini kiriting</label>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="phone" placeholder="Tell raqam kiriting" required>
+                        <label for="">Tell raqam kiriting</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="adress" placeholder="Manzil kiriting" required>
+                        <label for="">Manzil kiriting</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="descr" rows="5" placeholder="Qisqacha ariza qoldiring" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <button class="btn btn-primary" type="submit">Jo'natish</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main><!-- End #main -->

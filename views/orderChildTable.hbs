@@ -1,0 +1,51 @@
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>{{title}}</h1>
+
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Ariza Qoldirgan Bolalar Ro'yhati</h3>
+            <p>Bu sahifada ariza qoldirgan bolalar ro'yhatini ko'rishiz mumkin</p>
+            <!-- Bordered Table -->
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ism Familiyasi</th>
+                    <th scope="col">Tugilgan sanasi</th>
+                    <th scope="col">Tell raqami</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Arizasi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each childrenOrders}}
+                  <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{fullname}}</td>
+                    <td>{{birth}}</td>
+                    <td>{{phone}}</td>
+                    <td>{{adress}}</td>
+                    <td>{{descr}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+            <!-- End Bordered Table -->
+          </div>
+        </div>
+      </div>
+
+     
+    </div>
+  </section>
+
+</main><!-- End #main -->

@@ -37,6 +37,12 @@ server.use(session({
 // STATIC FILES configuration
 server.use(express.static( path.join(__dirname, 'public') ))
 
+server.get('/', require('./controls/pagesControls').getDashboard )
+server.get('/child/order', require('./controls/pagesControls').getOrder )
+server.post('/child/order', require('./controls/pagesControls').newOrderCreate )
+
+server.get('/child/order/table', require('./controls/pagesControls').getOrderTable )
+
 // Router configuration
 server.use('/admin',require('./routers/authRouters'))
 // server.use('/',  require('./routers/pagesRouters'))

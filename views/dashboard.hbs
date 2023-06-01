@@ -197,6 +197,49 @@
                 </div>
             </div>
 
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Guruhlar Ro'yhati</h3>
+                        <p>Bu sahifada guruhlar ro'yhatini ko'rishiz mumkin</p>
+                        <!-- Bordered Table -->
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Guruh nomi</th>
+                                        <th scope="col">Guruh haqida ma'lumot</th>
+                                        <th scope="col">Tarbiyachilar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each groups}}
+                                    <tr>
+                                        <th scope="row">{{@index}}</th>
+                                        <td>{{title}}</td>
+                                        <td>{{descr}}</td>
+                                        <td>
+                                            {{#if teacher}}
+                                            <ol>
+                                                {{#each teacher}}
+                                                <li>{{fullname}}</li>
+                                                {{/each}}
+                                            </ol>
+                                            {{else}}
+                                            -
+                                            {{/if}}
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End Bordered Table -->
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 

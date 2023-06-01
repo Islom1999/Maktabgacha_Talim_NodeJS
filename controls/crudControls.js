@@ -2,6 +2,7 @@ const Workers = require("../models/workers");
 const Groups = require("../models/groups");
 const Children = require("../models/children");
 const Admins = require("../models/admin");
+const ChildrenOrder = require('../models/childrenOrder')
 
 // Dashboard Pages and Events
 
@@ -128,6 +129,33 @@ const updateAdmin = async (req, res) => {
   }
 };
 
+// ordering of children
+const childrenCreateOrder = async (req, res) => {
+  try {
+    const { groups } = req.body;
+    const children = new Children({ ...req.body });
+    await children.save();
+
+    await Groups.findByIdAndUpdate(groups, {
+      $push: { children: children._id },
+    });
+
+    await ChildrenOrder.findByIdAndDelete(req.params.id);
+
+    res.redirect("/order/table");
+  } catch (error) {
+    console.log(error);
+  }
+};
+const deleteOrder = async (req, res) => {
+  try {
+    await ChildrenOrder.findByIdAndDelete(req.params.id);
+    res.redirect("/order/table");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   createWorker,
   deleteWorker,
@@ -144,4 +172,7 @@ module.exports = {
   createAdmin,
   updateAdmin,
   deleteAdmin,
+
+  childrenCreateOrder,
+  deleteOrder
 };

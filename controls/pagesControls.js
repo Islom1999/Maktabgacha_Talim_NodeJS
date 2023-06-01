@@ -2,6 +2,7 @@
 const Workers = require('../models/workers')
 const Groups = require('../models/groups')
 const Children = require('../models/children')
+const ChildrenOrder = require('../models/childrenOrder')
 const Admins = require('../models/admin')
 
 
@@ -10,6 +11,7 @@ const getDashboard = async(req, res) => {
     try {
         const workers = await Workers.find().lean()
         const children = await Children.find().lean()
+        const groups = await Groups.find().lean().populate('children').populate('teacher')
 
         let amount1 = 0
         workers.forEach(worker =>{
@@ -26,7 +28,6 @@ const getDashboard = async(req, res) => {
             workersAmount: amount1,
             childrenAmount: amount2
         }
-
         const workersData = await Workers.find().lean().populate('groups')
         const childrenData = await Children.find().lean().populate('groups')
 
@@ -35,12 +36,58 @@ const getDashboard = async(req, res) => {
             dashboard,
             workers: workersData,
             children: childrenData,
-
+            groups,
+            public: 'public',
+            isAdmin: req.session.isAdmin
         })
     } catch (error) {
         console.log(error)
     }
 }
+const getOrder = async(req, res) => {
+    try {
+        res.render('orderChild', {
+            title: 'Ariza qoldirish sahifasi',
+            public: 'public'
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+const newOrderCreate = async(req, res) => {
+    try {
+        await ChildrenOrder.create(req.body)
+        res.redirect('/child/order/table')
+    } catch (error) {
+        console.log(error)
+    }
+}
+const getOrderTable = async(req, res) => {
+    try {
+        const childrenOrders = await ChildrenOrder.find().lean()
+        res.render('orderChildTable', {
+            title: 'Novbat sahifasi',
+            public: 'public',
+            childrenOrders
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+const getOrderTableAdmin = async(req, res) => {
+    try {
+        const childrenOrders = await ChildrenOrder.find().lean()
+        const groups = await Groups.find().lean().populate('children').populate('teacher')
+        res.render('orderChildTableAdmin', {
+            title: 'Novbat sahifasi',
+            childrenOrders,
+            groups
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 
 // Home Pages and Events
 const getWorker = async(req, res) => {
@@ -79,7 +126,7 @@ const getChildren = async(req, res) => {
 const getSetting = async(req, res) => {
     try {
         const groups = await Groups.find().lean().populate('teacher')
-        const teachers = await Workers.find().lean()
+        const teachers = await Workers.find({status: "Tarbiyachi"}).lean()
 
         res.render('settings', {
             title: 'Sozlamalar sahifasi',
@@ -112,4 +159,8 @@ module.exports = {
     getChildren,
     getSetting,
     getAdmin,
+    getOrder,
+    getOrderTable,
+    newOrderCreate,
+    getOrderTableAdmin
 }

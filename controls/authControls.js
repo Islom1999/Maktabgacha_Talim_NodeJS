@@ -39,7 +39,7 @@ const adminLogOut = async(req, res) => {
         req.session.isAdmin = null
         req.session.isLogin = false
 
-        res.redirect('/admin/login')
+        res.redirect('/')
         
     } catch (error) {
         console.log(error)

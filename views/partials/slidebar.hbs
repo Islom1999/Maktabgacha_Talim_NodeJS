@@ -14,37 +14,99 @@
 
       <li class="nav-heading">Pages</li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="/workers">
-          <i class="bi bi-person"></i>
-          <span>Xodimlar</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
+      {{#if public}}
+            {{#if isAdmin}}
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="/order/table">
+                  <i class="bi bi-person"></i>
+                  <span>Arizalar</span>
+                </a>
+              </li><!-- End Profile Page Nav -->
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="/workers">
+                  <i class="bi bi-person"></i>
+                  <span>Xodimlar</span>
+                </a>
+              </li><!-- End Profile Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="/groups">
-          <i class="bi bi-question-circle"></i>
-          <span>Guruhlar</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="/groups">
+                  <i class="bi bi-question-circle"></i>
+                  <span>Guruhlar</span>
+                </a>
+              </li><!-- End F.A.Q Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="/settings">
-          <i class="bi bi-envelope"></i>
-          <span>Settings</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="/settings">
+                  <i class="bi bi-envelope"></i>
+                  <span>Settings</span>
+                </a>
+              </li><!-- End Contact Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="/admins">
-          <i class="bi bi-card-list"></i>
-          <span>Admins</span>
-        </a>
-      </li><!-- End Register Page Nav -->
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="/admins">
+                  <i class="bi bi-card-list"></i>
+                  <span>Admins</span>
+                </a>
+              </li><!-- End Register Page Nav -->
 
-      <form action="/admin/logout" method="post">
-        <button class="btn btn-danger ms-3">Logout</button>
-      </form>
+              <form action="/admin/logout" method="post">
+                <button class="btn btn-danger ms-3">Logout</button>
+              </form>
+              {{else}}
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="/child/order">
+                  <i class="bi bi-person"></i>
+                  <span>Ariza qoldirish</span>
+                </a>
+              </li><!-- End Profile Page Nav -->
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="/child/order/table">
+                  <i class="bi bi-person"></i>
+                  <span>Novbat</span>
+                </a>
+              </li><!-- End Profile Page Nav -->
+            {{/if}}
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="/order/table">
+                <i class="bi bi-person"></i>
+                <span>Arizalar</span>
+              </a>
+            </li><!-- End Profile Page Nav -->
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="/workers">
+                <i class="bi bi-person"></i>
+                <span>Xodimlar</span>
+              </a>
+            </li><!-- End Profile Page Nav -->
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="/groups">
+                <i class="bi bi-question-circle"></i>
+                <span>Guruhlar</span>
+              </a>
+            </li><!-- End F.A.Q Page Nav -->
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="/settings">
+                <i class="bi bi-envelope"></i>
+                <span>Settings</span>
+              </a>
+            </li><!-- End Contact Page Nav -->
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="/admins">
+                <i class="bi bi-card-list"></i>
+                <span>Admins</span>
+              </a>
+            </li><!-- End Register Page Nav -->
+
+            <form action="/admin/logout" method="post">
+              <button class="btn btn-danger ms-3">Logout</button>
+            </form>
+      {{/if}}
+
 
       
 
